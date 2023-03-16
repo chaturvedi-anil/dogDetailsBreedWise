@@ -1,0 +1,35 @@
+body
+{
+    margin: 0;
+    padding: 1rem;
+    background-color: lightgrey;
+}
+
+/* button */
+.btn
+{
+    width: 100px;
+    padding: 5px;
+    font-size: 1rem;
+    font-family: sans-serif;
+    
+}
+#dog-breed
+{
+    width: 200px;
+    padding: 5px;
+    font-size: 1rem;
+    font-family: sans-serif;
+}
+.breed-btn-container
+{
+    margin: 1rem;
+}
+.image-btn-container
+{
+    margin: 1rem;
+}
+.dog-image
+{
+    display: inline-block;
+}

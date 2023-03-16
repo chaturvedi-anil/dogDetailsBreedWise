@@ -9,14 +9,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <select name="dogBreed" id="dog-breed">
-    </select>
-
-    <button type="submit">Get images</button>
+    <div class="breed-btn-container">
+        <select name="dogBreed" id="dog-breed">
+            <option value="Affenpinscher">Affenpinscher</option>
+        </select>
+        <button type="submit" class="btn">Get images</button>
+    </div>
 
     <div class="image-btn-container">
-        <div class="dog-image"></div>
-        <button type="button">Next</button>
+        <div class="dog-image">
+            <img src="./images/dogImage.jpg" alt="" width="500px">
+        </div>
+        <button type="button" class="btn">Next</button>
     </div>
     <script src="script.js"></script>
 </body>
