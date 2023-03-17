@@ -1,0 +1,1 @@
+const getImageBtn=document.getElementById('getImageBtn');
