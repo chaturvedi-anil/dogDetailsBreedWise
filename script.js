@@ -1,7 +1,7 @@
 
 const getImageBtn=document.getElementById('getImageBtn');
 const nextBtn = document.getElementById('nextBtn');
-const dogImage=document.getElementById('image-btn-container');
+const dogImage=document.getElementById('dog-img');
 // dog Breed array
 var dogBreed = ["affenpinscher","african","airedale","akita","appenzeller",
                 "australian","basenji","beagle","bluetick","borzoi",
@@ -53,12 +53,8 @@ getImageBtn.addEventListener('click',()=>{
         {   
             console.log(data.message);
             html+=`
-            <!-- <div id="dog-img">
-            <img src="${data.message}" alt="">
-        </div> -->
-        <button class="btn" id="nextBtn">Next</button>
+                <img src="${data.message}" alt="">
                 `;
-            
                 dogImage.innerHTML=html;
         }
         else
@@ -68,7 +64,7 @@ getImageBtn.addEventListener('click',()=>{
     })
 });
 
-// getImage Btn
-getImageBtn.addEventListener('click', function(){
+// same Breed Image
+{
 
-});
+}
