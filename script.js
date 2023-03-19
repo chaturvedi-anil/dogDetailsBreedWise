@@ -2,6 +2,8 @@
 const getImageBtn=document.getElementById('getImageBtn');
 const nextBtn = document.getElementById('nextBtn');
 const dogImage=document.getElementById('dog-img');
+let breedName="";
+
 // dog Breed array
 var dogBreed = ["affenpinscher","african","airedale","akita","appenzeller",
                 "australian","basenji","beagle","bluetick","borzoi",
@@ -25,6 +27,7 @@ var dogBreed = ["affenpinscher","african","airedale","akita","appenzeller",
 let select=document.getElementById('dog-breed');
 select.addEventListener('change', changeBreed());
 
+// select breed from option tag
 function changeBreed()
 {    
     dogBreed.forEach(breed=>{
@@ -35,23 +38,23 @@ function changeBreed()
     });
 }
 
+// fetches image form dog api 
 async function fetchDogByBreed(url)
 {
     const response=await fetch(url);
-    // console.log(response);
     const dogDetails=await response.json();
-    // console.log(dogDetails);
     return dogDetails;
 }
 getImageBtn.addEventListener('click',()=>{
-    let breedName=select.value;
+    breedName=select.value;
     var url=`https://dog.ceo/api/breed/${breedName}/images/random`;
+    
+    // calling async function
     var dogDetails=fetchDogByBreed(url);
     var html="";
     dogDetails.then(data=>{
         if(data.message)
         {   
-            console.log(data.message);
             html+=`
                 <img src="${data.message}" alt="">
                 `;
@@ -61,10 +64,27 @@ getImageBtn.addEventListener('click',()=>{
         {
             alert("NotFound, Please Select Right Option");
         }
-    })
+    });
 });
 
-// same Breed Image
-{
-
-}
+// same Breed next Image
+nextBtn.addEventListener('click',()=>{
+    var url=`https://dog.ceo/api/breed/${breedName}/images/random`;
+    
+    // calling async function for same breed
+    var dogDetails=fetchDogByBreed(url);
+    var html="";
+    dogDetails.then(data=>{
+        if(data.message)
+        {   
+            html+=`
+                <img src="${data.message}" alt="">
+                `;
+                dogImage.innerHTML=html;
+        }
+        else
+        {
+            alert("NotFound");
+        }
+    });
+});

@@ -4,6 +4,14 @@ body
     padding: 1rem 3rem;
     background: linear-gradient(to right,rgb(161, 188, 188),rgb(120, 120, 165));
 }
+h1
+{
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    padding: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+}
 
 /* button */
 .btn
@@ -24,6 +32,11 @@ body
     padding: 5px;
     font-size: 1rem;
     font-family: sans-serif;
+    font-weight: bold;
+    border: 2px solid #fff;
+    text-transform: capitalize;
+    /* color: #fff; */
+    background: linear-gradient(to top right, rgb(128, 128, 125),rgb(78, 86, 78));
 }
 #breed-btn-container
 {
@@ -50,6 +63,8 @@ body
 }
 #nextBtn
 {
-
+    position: relative;
+    top: 43%;
 }
+
 
